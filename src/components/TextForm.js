@@ -12,6 +12,19 @@ export default function TextForm(props) {
         let newText=text.toLowerCase();
         setText(newText);
     }
+    const handleSortClick=()=>{
+        //console.log("Uppercase was Clicked" );
+        const charArray = text.split(' ');
+
+  // Sort the array of characters.
+  const sortedCharArray = charArray.sort();
+
+  // Join the sorted array back into a string.
+  const sortedString = sortedCharArray.join(' ');
+
+
+        setText(sortedString);
+    }
 
     const handleOnChange=(event)=>{
         //console.log("Uppercase was Clicked");
@@ -30,8 +43,8 @@ export default function TextForm(props) {
 
         </div>
         <button className="btn btn-primary mx-3" onClick={handleUpClick}>Convert to UPPERCASE</button>
-        <button className="btn btn-primary mx-3" onClick={handleLoClick}>Convert to UPPERCASE</button>
-        
+        <button className="btn btn-primary mx-3" onClick={handleLoClick}>Convert to LowerCASE</button>
+        <button className="btn btn-primary mx-3" onClick={handleSortClick}>Sorted</button>
     </div>
     <div className="container my-3">
             <h2>Your text Summary</h2>
